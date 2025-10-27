@@ -56,13 +56,13 @@ public class Examples : MonoBehaviour
 
 
 		//Dot Product
-		print("Two vectors facing the same direction");
+		print("Two vectors facing the same direction"); // = 1
 		print(Vector3.Dot(Vector3.forward, Vector3.forward));
 
-		print("Two vectors with a 90d angle");
+		print("Two vectors with a 90d angle"); // = 0
 		print(Vector3.Dot(Vector3.forward, Vector3.up));
 
-		print("Two vectors facing opposite directions");
+		print("Two vectors facing opposite directions"); // = -1
 		print(Vector3.Dot(Vector3.forward, Vector3.back));
 
 		//Cross Product

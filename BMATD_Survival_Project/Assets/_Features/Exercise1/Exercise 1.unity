@@ -252,31 +252,13 @@ GameObject:
   - component: {fileID: 593382177}
   - component: {fileID: 593382176}
   - component: {fileID: 593382175}
-  - component: {fileID: 593382174}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: TurretRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &593382174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593382173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a1732e5562ff940b4d35f1781050ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerTransform: {fileID: 969668829}
-  _radFOV: 0.5
-  _cooldown: 1
-  _bulletBehaviour: {fileID: 7323813433490417794, guid: d7f905284d78ee94087b41dfa9a6b496, type: 3}
-  _bulletSpawnPoint: {fileID: 1837213289}
 --- !u!65 &593382175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -359,14 +341,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593382173}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -6.07}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1951752456}
   - {fileID: 1837213289}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1066434761}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969668825
 GameObject:
@@ -478,6 +460,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1066434760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066434761}
+  - component: {fileID: 1066434762}
+  m_Layer: 0
+  m_Name: Turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1066434761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066434760}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: -6.07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 593382178}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066434762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066434760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a1732e5562ff940b4d35f1781050ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTransform: {fileID: 969668829}
+  _fieldOfView: 180
+  _cooldown: 1
+  _bulletBehaviour: {fileID: 7323813433490417794, guid: d7f905284d78ee94087b41dfa9a6b496, type: 3}
+  _bulletSpawnPoint: {fileID: 1837213289}
+  _renderer: {fileID: 593382178}
 --- !u!1 &1095604063
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,4 +859,4 @@ SceneRoots:
   - {fileID: 228177959}
   - {fileID: 1934289475}
   - {fileID: 969668829}
-  - {fileID: 593382178}
+  - {fileID: 1066434761}
