@@ -12,6 +12,9 @@ public class Examples : MonoBehaviour
 	[SerializeField]
 	private Rigidbody _rigidbody;
 
+	[SerializeField]
+	private AnimationCurve _animationCurve;
+
 	[ContextMenu("Run")]
 	private void Start()
 	{
@@ -116,14 +119,21 @@ public class Examples : MonoBehaviour
 
 		//Random.Range()
 
+		float randomFloat = Random.Range(0.0f, 5.5f);
+		print("random float: " + randomFloat.ToString());
+
+		int randomInt = Random.Range(0, 5); // => 0, 1, 2, 3, 4
+		print("random int: " + randomInt.ToString());
 
 		//Random.value
 
+		print("Random value between 0 and 1 :");
+		print(Random.value);
 
-		//Calculated Weighting
-
+		// => Calculated Weighting
 
 		//Animation Curves
+		_animationCurve.Evaluate(0.6f); //=> returns the y value of the curve à x = 0.6
 	}
 
 

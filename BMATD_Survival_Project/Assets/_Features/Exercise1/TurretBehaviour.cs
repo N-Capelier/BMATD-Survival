@@ -82,9 +82,44 @@ public class TurretBehaviour : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		//Gizmos.DrawLine(transform.position, (Quaternion.Euler(0, _fieldOfView / 2, 0) * transform.forward));
-		//Gizmos.DrawLine(transform.position, (Quaternion.AngleAxis(-_fieldOfView / 2, Vector3.up) * transform.forward));
+		//Gizmos.color = Color.white;
 
-		//Gizmos.DrawLine()
+		//Vector3 startPosition = transform.position;
+
+		//Quaternion rotationLeft = Quaternion.AngleAxis(_fieldOfView * .5f, Vector3.up);
+		//Vector3 directionLeft = rotationLeft * transform.forward;
+		//Vector3 targetPositionLeft = startPosition + directionLeft * 5f;
+
+		//Quaternion rotationRight = Quaternion.AngleAxis(-_fieldOfView * .5f, Vector3.up);
+		//Vector3 directionRight = rotationRight * transform.forward;
+		//Vector3 targetPositionRight = startPosition + directionRight * 5f;
+
+		//Gizmos.DrawLine(startPosition, targetPositionLeft);
+		//Gizmos.DrawLine(startPosition, targetPositionRight);
+
+
+
+
+
+
+
+
+
+
+
+
+		//More elegant solution
+
+		Gizmos.color = Color.red;
+		DrawViewLine(_fieldOfView * 0.5f);
+		DrawViewLine(-_fieldOfView * 0.5f);
+	}
+
+	private void DrawViewLine(float angle)
+	{
+		Vector3 start = transform.position;
+		Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
+		Vector3 dir = rotation * transform.forward;
+		Gizmos.DrawLine(start, start + dir * 5f);
 	}
 }
